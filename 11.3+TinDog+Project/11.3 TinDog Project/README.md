@@ -63,7 +63,7 @@ A Plan for Every Dog's Needs
 Simple and affordable price plans for you and your dog.
 
 Chihuahua
-$0/mo
+$0/mo d
 5 Matches Per Day
 10 Messages Per Day
 Unlimited App Usage
