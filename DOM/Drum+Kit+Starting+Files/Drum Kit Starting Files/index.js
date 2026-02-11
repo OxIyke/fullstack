@@ -3,14 +3,19 @@ const drumset = document.querySelectorAll(".drum");
 
 
 for (let i = 0; i < drumset.length; i++) {
-    drumset[i].addEventListener("click ", () => handleEvents(this.innerHTML));
-}
+    drumset[i].addEventListener("click", (e) => {
+        handleEvents(e.target.textContent);
+    })
+};
 
-document.addEventListener("keydown", () => handleEvents(event));
+document.addEventListener("keydown", (e) => {
+    handleEvents(e.key);
+});
 
 function handleEvents(key) {
     console.log("im running");
     console.log(key)
+    addAnimation(key);
     switch (key) {
         case "w":
             const audio1 = new Audio(`./sounds/tom-1.mp3`)
@@ -43,6 +48,14 @@ function handleEvents(key) {
     }
 };
 
+function addAnimation(currentValue) {
+    let value = document.querySelector(`.${currentValue}`);
+    value.classList.add("pressed");
+    let intervalId = setInterval(() => {
+        value.classList.remove("pressed")
+    }, 10)
+    clearInterval(intervalId);
+}
 
 //  const audio = new Audio(`./sounds/tom-1.mp3`)
 //         audio.play()
