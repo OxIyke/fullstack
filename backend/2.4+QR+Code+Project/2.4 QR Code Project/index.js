@@ -22,11 +22,13 @@ inquirer
         var qr_svg = qr.image(url);
         qr_svg.pipe(fs.createWriteStream(`${url}.png`));
 
-        writeFile("URL.txt", url, 'utf-8', 
+        fs.appendFile("URL.txt", ` \n${url}`, 'utf-8', 
            (err) => {
                 if (err) throw err;
                 console.log("The file has been saved");
             }
+
+            
         );
 
     })
