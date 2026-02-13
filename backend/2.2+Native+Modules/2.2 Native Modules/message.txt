@@ -1,2 +1,5 @@
-Hello from NodeJS!
-Hello from Angela!
+a bunch of stufff
+
+more stuff to be read i wonder if next js includes the 
+
+enter spaces i waslo wonder how this text will be dispalyed nthe console
