@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-  res.send(req.body.street + req.body.pet)
+  res.send(`${req.body.street}${req.body.pet}✌️`)
 });
 
 
