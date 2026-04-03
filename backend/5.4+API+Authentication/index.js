@@ -58,8 +58,9 @@ app.get("/apiKey", async (req, res) => {
   //Filter for all secrets with an embarassment score of 5 or greater
   //HINT: You need to provide a query parameter of apiKey in the request.
   try {
-    const result = await axios.get(`${API_URL}/filter?score=5`, {
-      headers: {
+    const result = await axios.get(`${API_URL}/filter`, {
+      params: {
+        score: 5,
         apiKey: yourAPIKey,
       },
     });
