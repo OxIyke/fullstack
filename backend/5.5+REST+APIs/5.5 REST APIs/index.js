@@ -27,9 +27,9 @@ app.post("/get-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
     const result = await axios.get(API_URL + "/secrets/" + searchId, config);
-    res.render("index.ejs", { content: JSON.stringify(result.data) });
+    res.render("index.ejs", { content: (result.data) });
   } catch (error) {
-    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    res.render("index.ejs", { content:  (error.response.data) });
   }
 });
 
@@ -38,9 +38,9 @@ app.post("/post-secret", async (req, res) => {
   const postData = req.body;
   try {
     const result = await axios.post(`${API_URL}/secrets`, postData, config);
-    res.render("index.ejs", { content: JSON.stringify(result.data) });
+    res.render("index.ejs", { content:  (result.data) });
   } catch (error) {
-    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    res.render("index.ejs", { content:  (error.response.data) });
   }
 });
 
@@ -54,9 +54,9 @@ app.post("/put-secret", async (req, res) => {
       putData,
       config,
     );
-    res.render("index.ejs", { content: JSON.stringify(result.data) });
+    res.render("index.ejs", { content:  (result.data) });
   } catch (error) {
-    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    res.render("index.ejs", { content:  (error.response.data) });
   }
 });
 
@@ -70,9 +70,9 @@ app.post("/patch-secret", async (req, res) => {
       patchData,
       config,
     );
-    res.render("index.ejs", { content: JSON.stringify(result.data) });
+    res.render("index.ejs", { content:  (result.data) });
   } catch (error) {
-    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    res.render("index.ejs", { content:  (error.response.data) });
   }
 });
 
@@ -82,9 +82,9 @@ app.post("/delete-secret", async (req, res) => {
   // TODO 5: Use axios to DELETE the item with searchId from the secrets api servers.
   try {
     const result = axios.delete(`${API_URL}/secrets/${searchId}`, config);
-    res.render("index.ejs", { content: JSON.stringify(result.data) });
+    res.render("index.ejs", { content:  (result.data) });
   } catch (error) {
-    res.render("index.ejs", { content: JSON.stringify(error.response.data) });
+    res.render("index.ejs", { content:  (error.response.data) });
   }
 });
 

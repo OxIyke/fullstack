@@ -107,9 +107,25 @@
 <body>
   <div class="container">
     <div class="response-area">
+      <% if (locals.content) {%>
       <p>
-        <%= content %>
+        id: <%= content.id %>
       </p>
+      <p>
+        secret: <%= content.secret %>
+      </p>
+      <p>
+        embarrassment Score: <%= content.emScore   %>
+      </p>
+      <p>
+        username: <%= content.username %>
+      </p>
+            <p>
+      timestamp: <%= content.timestamp%>
+      </p>
+    <% } else { %>
+      <p>NO Data here</p>
+      <% } %>
     </div>
     <form id="myForm" method="post">
       <label for="idInput">Id:</label>

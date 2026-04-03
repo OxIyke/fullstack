@@ -21,17 +21,24 @@ const API_URL = "https://secrets-api.appbrewery.com";
 app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
-  const result = await axios.get(`${API_URL}/random`);
-  //   console.log({
-  //     result: result,
-  //     resultData: result.data,
-  //     resultStatus: result.status,
-  //     resultStatusText: result.statusText,
-  //     resultRequest: result.request,
-  //     resultConfig: result.config,
-  //     resultHeaders: result.headers,
-  //   })
-  res.render("index.ejs", { content: result.data });
+  try {
+    const result = await axios.get(`${API_URL}/random`);
+    //   console.log({
+    //     result: result,
+    //     resultData: result.data,
+    //     resultStatus: result.status,
+    //     resultStatusText: result.statusText,
+    //     resultRequest: result.request,
+    //     resultConfig: result.config,
+    //     resultHeaders: result.headers,
+    //   })
+    res.render("index.ejs", { content: result.data });
+  } catch (e) {
+    console.log(e.response.data);
+    res.status(500).json({
+      error: e.response.data,
+    });
+  }
 });
 app.listen(port, () => {
   console.log(`Server Started at ${port}`);
