@@ -1,4 +1,4 @@
-function whosPaying(names) {
+function whoIsPaying(names) {
     
 /******Don't change the code above*******/
     
@@ -12,6 +12,7 @@ function whosPaying(names) {
     
     
     
+
 
 
 /******Don't change the code below*******/    
